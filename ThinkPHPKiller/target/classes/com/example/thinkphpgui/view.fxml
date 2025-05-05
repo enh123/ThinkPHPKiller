@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.thinkphpgui.Controller.Controller">
+   <children>
+      <BorderPane prefHeight="600.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <AnchorPane prefHeight="600.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+               <children>
+                  <TabPane layoutY="116.0" prefHeight="484.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="116.0">
+                     <tabs>
+                        <Tab text="   信息   ">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="467.0" prefWidth="800.0">
+                                 <children>
+                                    <TextArea fx:id="infoTextArea" prefHeight="464.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                    <TextArea fx:id="infoTextArea" layoutX="-2.0" layoutY="-1.0" prefHeight="475.0" prefWidth="812.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                 </children></AnchorPane>
+                          </content>
+                        </Tab>
+                     </tabs>
+                  </TabPane>
+                  <GridPane layoutX="3.0" layoutY="24.0" prefHeight="92.0" prefWidth="670.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="127.0" AnchorPane.topAnchor="24.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="294.5" minWidth="10.0" prefWidth="54.5" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="492.5" minWidth="10.0" prefWidth="313.5" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="462.5" minWidth="10.0" prefWidth="59.5" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="462.5" minWidth="0.0" prefWidth="54.5" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="462.5" minWidth="10.0" prefWidth="191.5" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label prefHeight="15.0" prefWidth="50.0" text="URL文件" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                        <Label text="URL" GridPane.halignment="CENTER" />
+                        <TextField fx:id="urlFileTextField" prefHeight="23.0" prefWidth="50.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="urlTextField" GridPane.columnIndex="1" />
+                        <Label GridPane.columnIndex="2" GridPane.halignment="CENTER" />
+                        <Button fx:id="importUrlButton" mnemonicParsing="false" onAction="#importUrlButtonOnAction" prefHeight="23.0" prefWidth="49.0" text="导入" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                        <ComboBox fx:id="vulnComboBox" prefHeight="23.0" prefWidth="241.0" GridPane.columnIndex="4" GridPane.halignment="CENTER" />
+                        <Label prefHeight="15.0" prefWidth="49.0" text="选择漏洞" GridPane.columnIndex="3" GridPane.halignment="CENTER">
+                           <GridPane.margin>
+                              <Insets />
+                           </GridPane.margin>
+                        </Label>
+                        <Button fx:id="startScanButton" mnemonicParsing="false" onAction="#startScanButtonOnAction" prefHeight="23.0" prefWidth="49.0" text="开始" GridPane.columnIndex="2" GridPane.halignment="CENTER" />
+                     </children>
+                  </GridPane>
+                  <MenuBar layoutX="1.0" prefHeight="25.0" prefWidth="800.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="0.0">
+                    <menus>
+                      <Menu mnemonicParsing="false" text="配置">
+                        <items>
+                          <MenuItem fx:id="setProxyMenuItem" mnemonicParsing="false" onAction="#setProxyMenuItemOnAction" text="设置代理" />
+                              <MenuItem fx:id="setHeadersMenuItem" mnemonicParsing="false" onAction="#setHeadersMenuItemOnAction" text="设置请求头" />
+                        </items>
+                      </Menu>
+                    </menus>
+                  </MenuBar>
+                  <Button fx:id="clearButton" layoutX="742.0" layoutY="72.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="52.0" text="clear" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="72.0" />
+                  <TextField fx:id="threadsTextField" layoutX="740.0" layoutY="34.0" prefHeight="23.0" prefWidth="54.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="34.0" />
+                  <Label layoutX="690.0" layoutY="38.0" prefHeight="15.0" prefWidth="43.0" text="线程数" AnchorPane.rightAnchor="67.0" AnchorPane.topAnchor="38.0" />
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>
