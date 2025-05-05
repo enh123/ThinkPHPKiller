@@ -26,6 +26,8 @@ Tp6 Lang 文件包含 RCE
 Tp 日志泄露
 
 
+java version "1.8.0_331"
+
 GUI 
 
 ![{D4905536-CA25-4E19-AE39-C03B66DFFC19}](https://github.com/user-attachments/assets/cda094a5-66b2-4f7f-9227-09550d5b2b51)
