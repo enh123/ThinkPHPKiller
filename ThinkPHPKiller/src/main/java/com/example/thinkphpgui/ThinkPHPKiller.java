@@ -11,7 +11,7 @@ import java.io.IOException;
 public class ThinkPHPKiller extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        stage.setTitle("ThinkphpGui");
+        stage.setTitle("ThinkPHPKiller");
         try{
             stage.getIcons().add(new Image(getClass().getResourceAsStream("ikun.png")));
         }catch (Exception ignored){
