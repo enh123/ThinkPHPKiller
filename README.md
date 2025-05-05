@@ -34,4 +34,5 @@ GUI
 参考：
 https://github.com/Lotus6/ThinkphpGUI
 https://github.com/nex121/ThinkphpGUI
+https://github.com/r3change/TPLogScan
 
