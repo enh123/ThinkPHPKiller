@@ -29,3 +29,9 @@ Tp 日志泄露
 GUI 
 
 ![{D4905536-CA25-4E19-AE39-C03B66DFFC19}](https://github.com/user-attachments/assets/cda094a5-66b2-4f7f-9227-09550d5b2b51)
+
+
+参考：
+https://github.com/Lotus6/ThinkphpGUI
+https://github.com/nex121/ThinkphpGUI
+
