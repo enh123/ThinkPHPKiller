@@ -30,7 +30,7 @@ GUI
 
 ![{D4905536-CA25-4E19-AE39-C03B66DFFC19}](https://github.com/user-attachments/assets/cda094a5-66b2-4f7f-9227-09550d5b2b51)
 
-有问题请提交isue,有空就修改
+有问题请提交issue,有空就修改
 
 参考：
 
