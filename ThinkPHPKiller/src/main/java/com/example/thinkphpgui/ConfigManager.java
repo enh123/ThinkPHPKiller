@@ -42,6 +42,16 @@ public class ConfigManager {
             "notify",
             "www",
             "wxnotify"
+            "chat",
+            "common",
+            "company",
+            "data",
+            "download",
+            "extra",
+            "front",
+            "sso",
+            "upload"
+            
     );
     public List<String> urlList=new ArrayList<>();
 
