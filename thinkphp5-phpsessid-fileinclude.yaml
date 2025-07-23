@@ -2,7 +2,7 @@ id: thinkphp5-phpsessid-fileinclude
 
 info:
   name: thinkphp5-phpsessid-fileinclude
-  author: venom
+  author: ikun
   severity: critical
   description: thinkphp5-phpsessid-fileinclude
   tags: thinkphp
