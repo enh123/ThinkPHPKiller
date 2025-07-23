@@ -2,7 +2,7 @@ id: thinkphp2-rce
 
 info:
   name: ThinkPHP 2.x Remote Code Execution (Optimized)
-  author: venom
+  author: ikun
   severity: critical
   description: thinkphp 2.x rce
   tags: thinkphp
