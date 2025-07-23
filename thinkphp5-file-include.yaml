@@ -2,7 +2,7 @@ id: thinkphp5-file-include
 
 info:
   name: ThinkPHP 5 文件包含
-  author: venom
+  author: ikun
   severity: critical
   description: ThinkPHP 5 文件包含
   tags: thinkphp
